@@ -1,3 +1,5 @@
+This document summarizes key Java concepts and example programs explored today. It covers foundational topics like abstract classes, inheritance, composition, and user input handling. The examples demonstrate practical usage of important keywords (this, var), class design principles, and input/output operations. 
+
 1. Abstract Class
 Definition:
 
@@ -212,3 +214,9 @@ class demoinput {
     }
 }
 
+Today’s documentation covers:
+- Abstract classes and methods
+- var and this keywords
+- Inheritance with constructor chaining
+- Object composition (has-a relationship)
+- User input with DataInputStream
