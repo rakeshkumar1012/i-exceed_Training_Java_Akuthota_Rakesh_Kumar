@@ -1,0 +1,214 @@
+1. Abstract Class
+Definition:
+
+When you define a method without a body, it is considered an abstract method.
+
+The class that contains such methods must be declared abstract.
+
+A subclass must use @Override to implement the abstract method.
+
+Code:
+abstract class Shape {
+    public abstract void display(); 
+class Circle extends Shape {
+    @Override
+    public void display() {
+        System.out.println("This is a Circle.");
+    }
+}
+
+ 2. var Keyword
+Definition:
+
+The var keyword is used in Java to let the compiler infer the variable type.
+
+Instead of int, float, String, etc.,
+
+
+this Keyword
+In Inheritance:
+
+If you want to access variables or methods from the same class, use this.
+
+Calling a Method from Constructor:
+
+this.display(); // calls display() 
+Accessing Instance Variables:
+
+
+this.name = name; // distinguish b/w instance variable and constructor parameter
+
+
+Inheritance Exapmle :
+
+
+class company
+ 
+{
+ 
+    String nameofcom;
+ 
+    String city;
+    company(String nameofcom,String city)
+ 
+	{
+ 
+	  this.nameofcom=nameofcom;
+ 
+	  this.city=city;
+ 
+	}
+ 
+  }
+class HR extends company
+ 
+{
+    String nameofHR,empid;
+ 
+    HR(String nameofcom, String city,String nameofHR,String empid)
+ 
+	{
+        super(nameofcom,city);
+        this.nameofHR = nameofHR;
+        this.empid = empid;
+        System.out.println("Name of Company "+nameofcom+" from City "+city+" The HR Name is "+nameofHR+" with EMP ID "+empid);
+	}
+ 
+}
+
+class Finance extends company
+ 
+{
+    String nameofEMP,empid;
+    Finance(String nameofcom, String city,String nameofEMP,String empid)
+ 
+	{
+        super(nameofcom,city);
+        this.nameofEMP = nameofEMP;
+        this.empid = empid;
+        System.out.println("Name of Company "+nameofcom+" from City "+city+" The Employee Name is "+nameofEMP+" with EMP ID "+empid);
+	}
+ 
+}
+ 
+class Company{
+    public static void main(String[] args){
+        Finance obj = new Finance("i-exceed","Banglore","Rakesh","EMP4742");
+        HR obj1 = new HR("i-exceed","Banglore","XYZ","EMP0001");
+    }
+}
+ 
+
+
+EX 2:
+
+class car{
+    String nameofCompany;
+    boolean isAvailable;
+    car(String nameofCompany,boolean isAvailable){
+        this.nameofCompany=nameofCompany;
+        this.isAvailable=isAvailable;
+        this.displaycompany();
+    }
+    public void displaycompany(){
+        System.out.println("Company: "+nameofCompany);
+        System.out.println("Availability: "+isAvailable);
+    }
+}
+class scorpio extends car{
+    String carName,modelName,color;
+    scorpio(String nameofCompany, boolean isAvailable , String carName,String modelName,String color){
+        super(nameofCompany,isAvailable);
+        this.carName=carName;
+        this.modelName=modelName;
+        this.color = color;
+        this.displaycar();
+    }
+    public void displaycar(){
+        System.out.println("Car name is: "+carName);
+        System.out.println("With Mssssodel name: "+modelName);
+        System.out.println("and color is: "+color);
+    }
+}
+ 
+class Main{
+    public static void main(String[] args){
+        scorpio obj = new scorpio("Mahindra",true,"XUV","500","black");
+    }
+}
+
+
+Composition (Student with Address Object)
+***Main Program:
+class Student {
+    String name, dept;
+    int roll;
+    Address adr;
+
+    Student(int roll, String name, String dept, Address adr) {
+        this.roll = roll;
+        this.name = name;
+        this.dept = dept;
+        this.adr = adr;
+    }
+
+    public void displayStudent() {
+        System.out.println("Name of the student: " + name);
+        System.out.println("Roll: " + roll);
+        System.out.println("Department: " + dept);
+        adr.displayAddress();
+    }
+}
+
+class demoStudent {
+    public static void main(String[] args) {
+        Address a1 = new Address("Koramangala A blk", "Bangalore", 2, 4324324);
+        Student s1 = new Student(1, "Rakesh", "CSE", a1);
+        s1.displayStudent();
+    }
+}
+*** Sub Program (Address):
+class Address {
+    int plotno, pin;
+    String st, city;
+
+    Address(String st, String city, int plotno, int pin) {
+        this.plotno = plotno;
+        this.pin = pin;
+        this.st = st;
+        this.city = city;
+    }
+
+    public void displayAddress() {
+        System.out.println("Plot: " + plotno);
+        System.out.println("Street: " + st);
+        System.out.println("City: " + city);
+        System.out.println("Pincode: " + pin);
+    }
+}
+
+
+Taking Input from User
+
+import java.io.DataInputStream;
+
+class sample {
+    DataInputStream din = new (System.in);
+
+    sample() {
+        try {
+            int str1 = Integer.parseInt(din.readLine());
+            int str2 = Integer.parseInt(din.readLine());
+            System.out.println(str1 + str2);
+        } catch (Exception d) {
+            System.out.println("Error reading input.");
+        }
+    }
+}
+
+class demoinput {
+    public static void main(String[] args) {
+        new sample();
+    }
+}
+
