@@ -1,0 +1,25 @@
+Day 4 - Java Concepts Practice
+
+1. Accessing Private Members using Reflection
+File Name: prvtaccessing.java
+Concept: Reflection
+
+This program shows how to access a private method from another class using Java Reflection. The method is made accessible and then invoked.
+
+2. Composition in Java
+File Name: composition.java
+Concept: Composition
+
+This example shows composition by using one class (state) inside another class (india). The india class has a reference to the state class, which helps show a "has-a" relationship.
+
+3. Functional Interface Example
+File Name: functionalinterface.java
+Concept: Functional Interface
+
+4. A functional interface is created and implemented using an anonymous inner class. The show method is overridden to print a message. It shows the basic use of functional interfaces.
+
+Encapsulation in Java
+File Name: demoencapsulation.java
+Concept: Encapsulation
+
+This program shows encapsulation by using private fields with public getters and setters. The values are accessed and modified using these methods, showing proper data hiding.
