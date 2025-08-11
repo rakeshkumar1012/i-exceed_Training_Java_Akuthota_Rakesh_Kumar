@@ -1,0 +1,32 @@
+Program 1: Basic Thread Execution using the Thread Class
+
+In this program, I explored the difference between calling the run() method directly and using the start()
+method to initiate a new thread. When run() is called directly, it runs on the main thread just like a regular method. However, calling start() creates a new thread and then invokes the run() method separately, allowing concurrent execution.
+
+
+Program 2: Setting Thread Name inside the run() Method
+
+This example focused on how to set a thread's name using the setName() method.
+I created a new thread object and set its name inside the run() method. However, 
+the thread object whose name was set was never actually started. Instead, the default thread created by calling start() on the main object executed the run() method. This helped me understand that naming a thread has no effect unless that specific thread is started.
+
+Program 3: Using sleep() to Pause Execution in Both Main and Child Threads
+
+In this program, I implemented a loop inside both the main thread and a custom thread, each printing values with a one-second pause using the sleep() method. This allowed me to observe concurrent execution of the two threads in real time. I also noticed that using new Thread(this).sleep() is not the best practice, and Thread.sleep() would have been a cleaner approach.
+
+
+Program 4: Using join() to Control Thread Execution Order
+
+Here, I used the join() method to ensure that each thread completes before the next one begins. This helped me enforce a strict execution order, where the second thread only starts after the first finishes, and the third starts after the second. It demonstrated how join() can be useful when thread synchronization or sequential execution is required.
+
+Summary:
+
+Across all four programs, I practiced the following key multithreading concepts in Java:
+
+The difference between run() and start()
+
+Naming threads using setName()
+
+Pausing thread execution with sleep()
+
+Controlling thread execution order using join()
